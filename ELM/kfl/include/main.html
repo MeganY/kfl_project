@@ -1,0 +1,32 @@
+<div ng-include="'./include/head.html'"></div>
+<div class="container">
+    <div class="from-group has-feedback">
+        <input type="search" class="form-control" ng-model="searchText" ng-keydown="searchDishes($event)" placeholder="搜索菜品名称和原料...">
+        <span class="glyphicon glyphicon-search form-control-feedback"></span>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="dish in dishes">
+            <div class="media">
+                <div class="media-left">
+                    <a href="#detail/{{dish.did}}"><img ng-src="img/{{dish.img_sm}}" alt=""></a>
+                </div>
+                <div class="media-body">
+                    <div class="media-heading">{{dish.name}}</div>
+                    <span>{{dish.material}}</span>
+                    <p style="width:100%;height:1px;border-top:1px solid #aaa;margin:3px 0"></p>
+                    <span>￥{{dish.price}}</span>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div ng-click="getMoreDishes()" ng-show="loadStatus<3">
+        <button style="margin-bottom:45px" class="btn btn-success btn-block">
+            <span ng-show="loadStatus == 1">加载更多</span>
+            <img ng-show="loadStatus == 2" width="10%" src="./img/loading_ajax.gif">
+        </button>
+    </div>
+    <div ng-show="loadStatus == 3">
+        <button style="margin-bottom:45px" class="btn btn-danger btn-block" >没有更多了</button>
+    </div>
+</div>
+<div ng-include="'./include/footer.html'"></div>

@@ -1,0 +1,56 @@
+<div ng-include="'./include/head.html'"></div>
+<div class="container">
+    <div class="bg_box">
+        <div class="user_bg text-center">
+            <img width="80px" class="img-circle" src="../img/users.jpg">
+
+        </div>
+        <div class="reg_login_color text-center" >
+            <div ng-show="user.status != 1">
+                <a href="#login">登录</a> / <a href="#reg">注册</a>
+            </div>
+            <div ng-show="user.status == 1">
+                <a href="">{{user.username}}</a>
+            </div>
+        </div>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <span class="glyphicon glyphicon-comment"></span> &nbsp;我的评价
+        </li>
+        <li class="list-group-item">
+            <span class="glyphicon glyphicon-user"></span> &nbsp;我的好友
+        </li>
+        <li class="list-group-item">
+            <span class="glyphicon glyphicon-star-empty"></span> &nbsp;我的收藏
+        </li>
+        <li class="list-group-item">
+            <span class="glyphicon glyphicon-map-marker"></span> &nbsp;我的地址
+        </li>
+    </ul>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <span class="glyphicon glyphicon-folder-open"></span> &nbsp;我的钱包
+        </li>
+    </ul>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <span class="glyphicon glyphicon-gift"></span> &nbsp;邀请有奖
+        </li>
+        <li class="list-group-item">
+            <span class="glyphicon glyphicon-question-sign"></span> &nbsp;帮助与反馈
+        </li>
+        <li class="list-group-item">
+            <span class="glyphicon glyphicon-phone-alt"></span> &nbsp;客服中心
+        </li>
+    </ul>
+    <ul class="list-group">
+        <li class="list-group-item text-center" ng-show="user.status == 1">
+            <a class="btn btn-danger btn-block" ng-click="logout()">注销</a>
+        </li>
+        <li class="list-group-item text-center">
+            客服电话：<a href="#">10109666</a>
+        </li>
+    </ul>
+</div>
+<div ng-include="'./include/footer.html'"></div>

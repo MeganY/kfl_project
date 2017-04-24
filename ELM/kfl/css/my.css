@@ -1,0 +1,55 @@
+*{
+    margin:0;padding:0;
+}
+body{
+    position:relative;
+    margin-top:65px;
+}
+.page{
+    position:absolute;
+    transition:all .8s linear;
+    width:100%;
+}
+.ng-leave{
+    /*left:0;*/
+    opacity: 1;
+}
+.ng-leave-active{
+    /*left:-100%;*/
+    opacity:0;
+}
+.ng-enter{
+    /*left:100%;*/
+    opacity:0;
+}
+.ng-enter-active{
+    /*left:0;*/
+    opacity:1;
+}
+.bg_box{
+    position: relative;
+    width:100%;
+    height:150px;
+    overflow: hidden;
+    zoom:1;
+}
+.user_bg{
+    position:absolute;
+    width:100%;
+    height:150px;
+    background:url("../img/user_bg.jpg");
+    background-size:100% 150px;
+    line-height:120px;
+}
+.user_bg img{
+    width:80px;
+    height:80px;
+    position: relative;
+}
+.reg_login_color{
+    position: relative;
+    margin:105px auto;
+}
+.reg_login_color a{
+    color:white;
+}
